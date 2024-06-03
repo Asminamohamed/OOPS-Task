@@ -1,0 +1,161 @@
+class Person {
+  constructor(personalInformation, summary, education,  skills,  extracurricularActivities, languages) {
+    this.personalInformation = personalInformation;
+    this.summary = summary;
+    this.education = education;
+    this.skills = skills;
+    this.extracurricularActivities = extracurricularActivities;
+    this.languages = languages;
+  }
+
+  // Display personal information
+  displayPersonalInformation() {
+    console.log("Personal Information:");
+    for (let key in this.personalInformation) {
+      console.log(`${key}: ${this.personalInformation[key]}`);
+    }
+  }
+
+  // Display summary
+  displaySummary() {
+    console.log("\nSummary:");
+    console.log(this.summary);
+  }
+
+  // Display education
+  displayEducation() {
+    console.log("\nEducation:");
+    this.education.forEach((edu, index) => {
+      console.log(`Education ${index + 1}:`);
+      for (let key in edu) {
+        console.log(`${key}: ${edu[key]}`);
+      }
+    });
+  }
+
+
+  // Display skills
+  displaySkills() {
+    console.log("\nSkills:");
+    this.skills.forEach((skill, index) => {
+      console.log(`${index + 1}. ${skill}`);
+    });
+  }
+
+  
+  // Display extracurricular activities
+  displayExtracurricularActivities() {
+    console.log("\nExtracurricular Activities:");
+    this.extracurricularActivities.forEach((activity, index) => {
+      console.log(`Activity ${index + 1}:`);
+      for (let key in activity) {
+        console.log(`${key}: ${activity[key]}`);
+      }
+    });
+  }
+
+  // Display languages
+  displayLanguages() {
+    console.log("\nLanguages:");
+    this.languages.forEach((lang, index) => {
+      console.log(`Language ${index + 1}:`);
+      for (let key in lang) {
+        console.log(`${key}: ${lang[key]}`);
+      }
+    });
+  }
+
+  // Display all details
+  displayAllDetails() {
+    this.displayPersonalInformation();
+    this.displaySummary();
+    this.displayEducation();
+    this.displaySkills();
+    this.displayExtracurricularActivities();
+    this.displayLanguages();
+  }
+}
+
+const personalInformation = {
+  name: "Asmina",
+  address: "212,ads Garden,France",
+  phone: "+12356789107",
+  email: "Asmi.will@example.com",
+  linkedin: "https://www.linkedin.com/in/Asmina",
+  github: "https://github.com/Asmina"
+};
+
+const summary = "Motivated first-year Bachelor of Computer Science student with a strong foundation in programming and problem-solving. Eager to learn and apply new technologies in real-world projects.";
+
+const education = [
+  {
+    degree: "Bachelor of Computer Science",
+    institution: "University of Toronto",
+    location: "Toronto,Canada",
+    expectedGraduationYear: 2027
+  }
+];
+
+
+const skills = [
+  "JavaScript",
+  "Python",
+  "HTML",
+  "C++",
+  "Git",
+  "Problem-solving",
+];
+
+const extracurricularActivities = [
+  {
+    title: "Member",
+    organization: "University Coding Club",
+    dates: "Aug 2023 - Present",
+    responsibilities: [
+      "Participated in coding competitions and hackathons.",
+      "Attended weekly meetings and workshops on various programming topics."
+    ]
+  },
+  {
+    title: "Volunteer",
+    organization: "Local Shelter",
+    dates: "Jun 2022 - Present",
+    responsibilities: [
+      "Assisted with the care and maintenance of shelter animals.",
+      "Helped organize and run fundraising events."
+    ]
+  }
+];
+
+const languages = [
+  {
+    language: "Tamil",
+    proficiency: "Native"
+  },
+  {
+    language: "French",
+    proficiency: "Conversational"
+  }
+  
+];
+
+const Asmina = new Person(personalInformation, summary, education,  skills, extracurricularActivities, languages);
+
+// Display all details
+Asmina.displayAllDetails();
+
+// Calculate the price of uber ride
+
+const baseFare = 250; 
+const costPerMile = 175; 
+const costPerMinute = 5; 
+const bookingFee = 150; 
+const surgeMultiplier = 12; 
+
+const uberCalculator = new UberPriceCalculator(baseFare, costPerMile, costPerMinute, bookingFee, surgeMultiplier);
+
+const distanceInMiles = 10; 
+const timeInMinutes = 20; 
+
+const price = uberCalculator.calculatePrice(distanceInMiles, timeInMinutes);
+console.log(The total price for the Uber ride is $${price}⁠);
